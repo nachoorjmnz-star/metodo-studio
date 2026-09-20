@@ -1,0 +1,20 @@
+Fecha,Tipo,Categoría,Concepto,Importe,Método de pago,Mes
+2026-09-01,Ingreso,Nómina,Salario septiembre,1850.00,Transferencia,Septiembre
+2026-09-02,Gasto,Vivienda,Alquiler,650.00,Transferencia,Septiembre
+2026-09-03,Gasto,Suministros,Luz y agua,74.30,Domiciliado,Septiembre
+2026-09-04,Gasto,Alimentación,Compra semanal,58.90,Tarjeta,Septiembre
+2026-09-05,Gasto,Ocio,Cena con amigos,32.00,Tarjeta,Septiembre
+2026-09-06,Gasto,Transporte,Abono mensual,42.00,Tarjeta,Septiembre
+2026-09-07,Ingreso,Extra,Venta segunda mano,45.00,Bizum,Septiembre
+2026-09-10,Gasto,Suscripciones,Streaming + música,22.98,Tarjeta,Septiembre
+2026-09-12,Gasto,Alimentación,Compra semanal,61.20,Tarjeta,Septiembre
+2026-09-15,Ahorro,Ahorro,Traspaso a hucha,340.00,Transferencia,Septiembre
+2026-09-18,Gasto,Salud,Farmacia,14.50,Efectivo,Septiembre
+2026-09-20,Gasto,Ropa,Zapatillas,59.99,Tarjeta,Septiembre
+,,,,,,
+INSTRUCCIONES,,,,,,
+"1) Abre este archivo en Google Sheets (Archivo > Importar) o en Excel.",,,,,,
+"2) Cada fila es un movimiento. Rellena Fecha, Tipo, Categoría, Concepto e Importe.",,,,,,
+"3) Tipos válidos: Ingreso, Gasto, Ahorro.",,,,,,
+"4) En la versión Google Sheets del producto, el panel calcula solo el total por categoría, el % gastado y el ahorro del mes.",,,,,,
+"5) Cambia las categorías por las tuyas: Vivienda, Alimentación, Transporte, Ocio, Salud, Suscripciones, Ahorro...",,,,,,

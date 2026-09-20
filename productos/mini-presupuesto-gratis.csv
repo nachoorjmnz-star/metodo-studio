@@ -1,0 +1,22 @@
+MINI-PRESUPUESTO MENSUAL · Método (gratis),,,
+Categoría,Presupuesto (€),Gastado (€),Diferencia (€)
+Ingresos del mes,1850,1850,0
+Vivienda (alquiler/hipoteca),650,650,0
+Suministros (luz/agua/gas/internet),120,108,12
+Alimentación,300,282,18
+Transporte,80,74,6
+Ocio y salidas,150,132,18
+Suscripciones,30,23,7
+Salud,40,15,25
+Ahorro (págate a ti primero),340,340,0
+Imprevistos,50,20,30
+,,,
+"Disponible = Ingresos - (todos los gastos + ahorro)",,,
+,,,
+COMO USARLO,,,
+"1) Abre este archivo en Google Sheets (Archivo > Importar) o en Excel.",,,
+"2) Cambia las cifras por las tuyas: presupuesto (lo que planeas) y gastado (lo real).",,,
+"3) La diferencia te dice dónde te pasas y dónde te sobra.",,,
+"4) Regla simple: intenta ahorrar primero, antes de gastar el resto.",,,
+,,,
+"¿Quieres el panel completo con gráficos y cálculos automáticos? -> Control Total en metodo.studio",,,

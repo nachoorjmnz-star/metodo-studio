@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Planner 2026 · Método</title>
+<style>
+  :root{--ink:#1B1A16;--soft:#6b6459;--line:#d9d2c4;--green:#2E5A4C;--paper:#fff;--accent:#E7EFEA}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--ink);background:#e9e4da}
+  .page{width:210mm;min-height:297mm;background:var(--paper);margin:16px auto;padding:22mm 20mm;position:relative}
+  .serif{font-family:Georgia,'Times New Roman',serif}
+  h1{font-family:Georgia,serif;font-size:52px;font-weight:600;letter-spacing:-1px;line-height:1.05}
+  h2{font-family:Georgia,serif;font-size:30px;font-weight:600;margin-bottom:4px}
+  .muted{color:var(--soft)}
+  .toolbar{position:fixed;top:14px;right:14px;background:var(--green);color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;cursor:pointer;z-index:10;box-shadow:0 4px 14px rgba(0,0,0,.2);border:none}
+  @media print{ .toolbar{display:none} body{background:#fff} .page{margin:0;box-shadow:none;page-break-after:always} }
+
+  /* Cover */
+  .cover{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;height:253mm}
+  .cover .yr{font-family:Georgia,serif;font-size:150px;font-weight:700;color:var(--green);line-height:.9}
+  .cover .tag{margin-top:20px;font-size:18px;letter-spacing:3px;text-transform:uppercase;color:var(--soft)}
+  .cover .dot{width:12px;height:12px;border-radius:50%;background:var(--green);display:inline-block}
+  .cover .foot{position:absolute;bottom:22mm;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--soft)}
+
+  /* Year grid */
+  .head-row{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:20px}
+  .year-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 18px}
+  .mini h3{font-family:Georgia,serif;font-size:16px;margin-bottom:6px;color:var(--green)}
+  table{width:100%;border-collapse:collapse}
+  .mini td,.mini th{width:14.28%;text-align:center;font-size:10px;padding:3px 0;color:var(--ink)}
+  .mini th{color:var(--soft);font-weight:600}
+  .mini td.o{color:#c9c2b4}
+
+  /* Month page */
+  .month-cal{width:100%;border-collapse:collapse;margin-top:8px}
+  .month-cal th{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--soft);padding:8px 6px;text-align:left;border-bottom:1px solid var(--line)}
+  .month-cal td{border:1px solid var(--line);height:30mm;width:14.28%;vertical-align:top;padding:6px;font-size:13px;color:var(--ink)}
+  .month-cal td.o{background:#faf8f3;color:#c9c2b4}
+  .month-side{display:flex;gap:20px;margin-top:16px}
+  .month-side .box{flex:1;border:1px solid var(--line);border-radius:8px;padding:14px}
+  .month-side h4{font-family:Georgia,serif;font-size:15px;margin-bottom:10px;color:var(--green)}
+  .lines div{border-bottom:1px dashed var(--line);height:26px}
+
+  /* Weekly */
+  .week-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:14px}
+  .week-day{border:1px solid var(--line);padding:12px 14px;min-height:33mm}
+  .week-day b{font-family:Georgia,serif;color:var(--green);font-size:15px}
+  .week-day .ln{border-bottom:1px dashed var(--line);height:22px;margin-top:6px}
+  .goals-block{margin-top:18px}
+  .goals-block .g{border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px}
+  .goals-block h4{font-family:Georgia,serif;color:var(--green);margin-bottom:8px}
+  .check{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:14px}
+  .check .b{width:16px;height:16px;border:1.5px solid var(--soft);border-radius:4px;flex-shrink:0}
+</style>
+</head>
+<body>
+<button class="toolbar" onclick="window.print()">⤓ Guardar como PDF / Imprimir</button>
+
+<!-- COVER -->
+<section class="page cover">
+  <div class="tag">Planner</div>
+  <div class="yr">2026</div>
+  <div class="tag">Ordena tu año · Método <span class="dot"></span></div>
+  <div class="foot">nombre: _______________________</div>
+</section>
+
+<!-- YEAR AT A GLANCE -->
+<section class="page">
+  <div class="head-row"><h2>2026 · Vista anual</h2><span class="muted">Un vistazo a todo el año</span></div>
+  <div class="year-grid" id="yearGrid"></div>
+</section>
+
+<!-- MONTHS + WEEKLY + GOALS se generan con JS -->
+<div id="months"></div>
+
+<script>
+const MESES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const DIAS = ["L","M","X","J","V","S","D"];
+const DIAS_L = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
+
+// lunes = 0
+function firstWeekday(y,m){ let d=new Date(y,m,1).getDay(); return (d+6)%7; }
+function daysIn(y,m){ return new Date(y,m+1,0).getDate(); }
+
+// Mini calendarios (vista anual)
+let yg = "";
+for(let m=0;m<12;m++){
+  const fw=firstWeekday(2026,m), di=daysIn(2026,m);
+  let cells=[]; for(let i=0;i<fw;i++) cells.push("");
+  for(let d=1;d<=di;d++) cells.push(d);
+  while(cells.length%7) cells.push("");
+  let rows="";
+  for(let i=0;i<cells.length;i+=7){
+    rows+="<tr>"+cells.slice(i,i+7).map(c=>`<td class="${c===''?'o':''}">${c||''}</td>`).join("")+"</tr>";
+  }
+  yg+=`<div class="mini"><h3>${MESES[m]}</h3><table><tr>${DIAS.map(d=>`<th>${d}</th>`).join("")}</tr>${rows}</table></div>`;
+}
+document.getElementById("yearGrid").innerHTML = yg;
+
+// Páginas mensuales
+let html="";
+for(let m=0;m<12;m++){
+  const fw=firstWeekday(2026,m), di=daysIn(2026,m);
+  let cells=[]; for(let i=0;i<fw;i++) cells.push("");
+  for(let d=1;d<=di;d++) cells.push(d);
+  while(cells.length%7) cells.push("");
+  let rows="";
+  for(let i=0;i<cells.length;i+=7){
+    rows+="<tr>"+cells.slice(i,i+7).map(c=>`<td class="${c===''?'o':''}">${c||''}</td>`).join("")+"</tr>";
+  }
+  html+=`<section class="page">
+    <div class="head-row"><h2>${MESES[m]} <span class="muted" style="font-size:18px">2026</span></h2><span class="muted">Foco del mes: ______________</span></div>
+    <table class="month-cal"><tr>${DIAS_L.map(d=>`<th>${d}</th>`).join("")}</tr>${rows}</table>
+    <div class="month-side">
+      <div class="box"><h4>Objetivos del mes</h4><div class="lines"><div></div><div></div><div></div></div></div>
+      <div class="box"><h4>Notas</h4><div class="lines"><div></div><div></div><div></div></div></div>
+    </div>
+  </section>`;
+}
+
+// Plantilla semanal (reutilizable)
+html+=`<section class="page">
+  <div class="head-row"><h2>Semana del ______</h2><span class="muted">Plantilla semanal · imprime las que necesites</span></div>
+  <div class="week-grid">
+    ${DIAS_L.map(d=>`<div class="week-day"><b>${d}</b><div class="ln"></div><div class="ln"></div><div class="ln"></div></div>`).join("")}
+    <div class="week-day" style="background:var(--accent)"><b>Notas / próxima semana</b><div class="ln"></div><div class="ln"></div><div class="ln"></div></div>
+  </div>
+</section>`;
+
+// Página de metas
+html+=`<section class="page">
+  <div class="head-row"><h2>Metas 2026</h2><span class="muted">Lo que de verdad importa</span></div>
+  <div class="goals-block">
+    <div class="g"><h4>🎯 3 grandes metas del año</h4>
+      <div class="check"><span class="b"></span> _______________________________</div>
+      <div class="check"><span class="b"></span> _______________________________</div>
+      <div class="check"><span class="b"></span> _______________________________</div>
+    </div>
+    <div class="g"><h4>💪 Hábitos que quiero construir</h4>
+      <div class="check"><span class="b"></span> _______________________________</div>
+      <div class="check"><span class="b"></span> _______________________________</div>
+      <div class="check"><span class="b"></span> _______________________________</div>
+    </div>
+    <div class="g"><h4>🚫 Cosas que quiero soltar</h4>
+      <div class="check"><span class="b"></span> _______________________________</div>
+      <div class="check"><span class="b"></span> _______________________________</div>
+    </div>
+  </div>
+</section>`;
+
+document.getElementById("months").innerHTML = html;
+</script>
+</body>
+</html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Método — Sistemas para ordenar tu dinero, tu tiempo y tus metas</title>
+<meta name="description" content="Plantillas premium de finanzas y productividad en español. Presupuestos, planificadores, hábitos y CRM listos para usar hoy. Descarga inmediata." />
+<meta name="theme-color" content="#2E5A4C" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Método" />
+<meta property="og:title" content="Método — Ordena tu dinero, tu tiempo y tus metas" />
+<meta property="og:description" content="Plantillas premium de finanzas y productividad en español. Descarga inmediata, para siempre." />
+<meta property="og:locale" content="es_ES" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Store","name":"Método","description":"Plantillas premium de finanzas y productividad en español.","image":"logo.svg","priceRange":"€9 - €89","currenciesAccepted":"EUR"}
+</script>
+
+<style>
+:root{
+  --paper:#F6F1E8;
+  --paper-2:#FBF8F2;
+  --ink:#1B1A16;
+  --ink-soft:#5C574C;
+  --line:#E6DECF;
+  --green:#2E5A4C;
+  --green-d:#22463A;
+  --green-t:#E7EFEA;
+  --green-m:#6E9C8C;
+  --sand:#E7DCC7;
+  --clay:#B8734A;
+  --clay-t:#F5EAE1;
+  --shadow:0 1px 2px rgba(27,26,22,.03),0 10px 30px rgba(27,26,22,.06);
+  --shadow-lg:0 30px 70px rgba(27,26,22,.18);
+  --r:16px;
+  --maxw:1200px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(1200px 600px at 78% -8%, #EFF3EE 0%, rgba(239,243,238,0) 55%),
+                   radial-gradient(900px 500px at -5% 8%, #F6EDE2 0%, rgba(246,237,226,0) 50%);
+  color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.015em}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--green)}
+.ital{font-style:italic;font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:8px;justify-content:center;font-family:'Inter';font-weight:600;font-size:15px;padding:13px 24px;border-radius:100px;border:1px solid transparent;cursor:pointer;transition:.2s var(--ease);white-space:nowrap}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 8px 22px rgba(46,90,76,.22)}
+.btn-primary:hover{background:var(--green-d);transform:translateY(-2px);box-shadow:0 14px 30px rgba(46,90,76,.28)}
+.btn-ghost{background:rgba(255,255,255,.5);color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--ink);background:#fff}
+.btn-block{width:100%}
+.pill{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;padding:4px 11px;border-radius:100px;background:var(--green-t);color:var(--green-d);text-transform:uppercase}
+
+/* reveal */
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+[data-reveal].in{opacity:1;transform:none}
+
+/* ANNOUNCE */
+.announce{background:var(--ink);color:var(--paper);text-align:center;font-size:12.5px;letter-spacing:.02em;padding:9px 16px;font-weight:500}
+.announce b{color:#EBD9C7}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:60;background:rgba(246,241,232,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.brand{display:flex;align-items:center;gap:9px;font-family:'Fraunces';font-weight:600;font-size:23px;letter-spacing:-.02em}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--green);display:inline-block;margin-bottom:2px}
+.nav-links{display:flex;gap:28px;font-size:14.5px;font-weight:500}
+.nav-links a{color:var(--ink-soft);transition:.15s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:var(--green);transition:.25s var(--ease)}
+.nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:14px}
+.cart-btn{position:relative;background:none;border:none;cursor:pointer;color:var(--ink);display:flex;align-items:center;padding:8px}
+.cart-count{position:absolute;top:0;right:-2px;background:var(--clay);color:#fff;font-size:10.5px;font-weight:700;min-width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--ink)}
+
+/* HERO */
+.hero{padding:72px 0 46px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,68px);margin:20px 0 22px}
+.hero h1 em{font-style:italic;color:var(--green);font-weight:500}
+.hero p.lead{font-size:19px;color:var(--ink-soft);max-width:31ch;margin-bottom:30px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.trust{display:flex;gap:20px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-soft)}
+.trust span{display:flex;align-items:center;gap:7px}
+.trust svg{color:var(--green);flex-shrink:0}
+/* hero visual layered */
+.hero-visual{position:relative;padding:10px}
+.hero-main{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);transform:rotate(-1.3deg);border:1px solid rgba(255,255,255,.6);animation:floaty 7s var(--ease) infinite}
+.hero-main .thumb{width:100%;height:auto;display:block}
+@keyframes floaty{0%,100%{transform:rotate(-1.3deg) translateY(0)}50%{transform:rotate(-1.3deg) translateY(-9px)}}
+.hero-float{position:absolute;bottom:-6px;left:-22px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);padding:14px 16px;display:flex;align-items:center;gap:12px;animation:floaty2 6s var(--ease) infinite}
+@keyframes floaty2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.hero-float .ring{width:44px;height:44px;flex-shrink:0}
+.hero-float b{font-family:'Fraunces';font-size:17px;font-weight:600;display:block;line-height:1}
+.hero-float span{font-size:11.5px;color:var(--ink-soft)}
+.hero-badge{position:absolute;top:2px;right:-6px;background:var(--ink);color:var(--paper);font-size:12px;font-weight:600;padding:8px 14px;border-radius:100px;box-shadow:var(--shadow);transform:rotate(3deg)}
+.deco-circle{position:absolute;right:6%;top:-4%;width:120px;height:120px;border:1.5px dashed var(--sand);border-radius:50%;z-index:-1}
+
+/* MARQUEE */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(251,248,242,.6);overflow:hidden;margin-top:50px}
+.marquee-track{display:flex;gap:38px;white-space:nowrap;padding:16px 0;width:max-content;animation:scroll 26s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-size:14px;color:var(--ink-soft);font-weight:500;display:flex;align-items:center;gap:12px}
+.marquee-track span::after{content:"✦";color:var(--green-m);margin-left:26px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.section{padding:82px 0}
+.section-head{max-width:660px;margin-bottom:46px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.section-head h2{font-size:clamp(29px,3.8vw,44px);margin:14px 0 12px}
+.section-head p{color:var(--ink-soft);font-size:17px}
+
+/* VALUES */
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.value{background:rgba(251,248,242,.7);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:.25s var(--ease)}
+.value:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--sand)}
+.value .ic{width:46px;height:46px;border-radius:12px;background:var(--green-t);color:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.value h3{font-size:20px;margin-bottom:8px}
+.value p{font-size:14.5px;color:var(--ink-soft)}
+
+/* CATALOG */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.filter{font-family:'Inter';font-size:14px;font-weight:500;padding:9px 18px;border-radius:100px;border:1px solid var(--line);background:rgba(255,255,255,.4);cursor:pointer;transition:.18s var(--ease);color:var(--ink-soft)}
+.filter.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.filter:hover:not(.active){border-color:var(--ink);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.28s var(--ease);cursor:pointer;position:relative}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--sand)}
+.card-visual{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#F1EBDF}
+.card-visual .thumb{width:100%;height:auto;display:block;transition:.4s var(--ease)}
+.card:hover .card-visual .thumb{transform:scale(1.035)}
+.card-badge{position:absolute;top:13px;left:13px;z-index:2;box-shadow:0 2px 8px rgba(27,26,22,.12)}
+.card-cat{position:absolute;top:13px;right:13px;z-index:2;font-size:11px;font-weight:600;color:var(--ink-soft);background:rgba(255,255,255,.9);padding:4px 10px;border-radius:100px}
+.card-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-size:20px;margin-bottom:6px}
+.card-body p{font-size:14px;color:var(--ink-soft);flex:1;margin-bottom:16px}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.price{font-family:'Fraunces';font-weight:600;font-size:23px}
+.price s{font-family:'Inter';font-size:14px;color:var(--ink-soft);font-weight:400;margin-right:6px}
+.card .add{font-size:13.5px;font-weight:600;color:var(--green);display:flex;align-items:center;gap:5px;padding:7px 12px;border-radius:100px;background:var(--green-t);transition:.2s var(--ease)}
+.card:hover .add{background:var(--green);color:#fff}
+
+/* SPOTLIGHT */
+.spot{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.spot-visual{background:linear-gradient(150deg,#EFF3EE,#F6EDE2);padding:44px;display:flex;align-items:center;justify-content:center;position:relative}
+.spot-visual .win{width:100%;max-width:430px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);transform:rotate(1.2deg)}
+.spot-visual .win .thumb{width:100%;height:auto;display:block}
+.spot-info{padding:48px;display:flex;flex-direction:column;justify-content:center}
+.spot-info h2{font-size:clamp(28px,3.4vw,40px);margin:14px 0 14px}
+.spot-info p{color:var(--ink-soft);font-size:16px;margin-bottom:22px;max-width:42ch}
+.spot-feat{list-style:none;margin-bottom:26px;display:grid;gap:9px}
+.spot-feat li{display:flex;gap:10px;font-size:14.5px;align-items:center}
+.spot-feat svg{color:var(--green);flex-shrink:0}
+.spot-buy{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.spot-buy .price{font-size:30px}
+
+/* BUNDLE */
+.bundle{background:var(--green);color:var(--paper);border-radius:24px;padding:50px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center;position:relative;overflow:hidden;box-shadow:0 30px 70px rgba(46,90,76,.28)}
+.bundle::before{content:"";position:absolute;right:-70px;top:-90px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.05)}
+.bundle::after{content:"";position:absolute;left:-60px;bottom:-80px;width:200px;height:200px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.14)}
+.bundle .eyebrow{color:#B7D3C8}
+.bundle h2{font-size:clamp(29px,3.8vw,42px);color:var(--paper);margin:12px 0 14px}
+.bundle p{color:#CFE0D8;font-size:16px;margin-bottom:24px;max-width:44ch}
+.bundle-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px 18px;margin-bottom:26px;position:relative}
+.bundle-list li{font-size:14px;color:#E3EDE8;display:flex;gap:8px;align-items:center}
+.bundle-list li::before{content:"✓";color:#9FD0BE;font-weight:700}
+.bundle-price{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:30px;text-align:center;position:relative;backdrop-filter:blur(4px)}
+.bundle-price .was{color:#9FB5AC;text-decoration:line-through;font-size:16px}
+.bundle-price .big{font-family:'Fraunces';font-size:56px;font-weight:600;line-height:1}
+.bundle-price .save{display:inline-block;background:var(--clay);color:#fff;font-size:12px;font-weight:600;padding:5px 13px;border-radius:100px;margin:10px 0 20px}
+.bundle-price .btn{background:var(--paper);color:var(--green-d)}
+.bundle-price .btn:hover{background:#fff}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s;position:relative}
+.step{padding:30px 26px;border-radius:var(--r);background:rgba(251,248,242,.7);border:1px solid var(--line);transition:.25s var(--ease)}
+.step:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.step .num{font-family:'Fraunces';font-size:15px;font-weight:600;color:#fff;background:var(--green);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.step h3{font-size:20px;margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--ink-soft)}
+
+/* TESTIMONIALS */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.quote{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:.25s var(--ease)}
+.quote:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.quote .stars{color:var(--clay);font-size:14px;letter-spacing:2px;margin-bottom:12px}
+.quote p{font-size:15px;margin-bottom:20px}
+.quote .who{display:flex;align-items:center;gap:11px}
+.quote .av{width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-family:'Fraunces'}
+.quote .who b{font-size:14px;display:block}
+.quote .who span{font-size:12.5px;color:var(--ink-soft)}
+
+/* FAQ */
+.faq{max-width:780px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:22px 0;font-family:'Fraunces';font-size:19px;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q .chev{transition:.25s var(--ease);flex-shrink:0;color:var(--green)}
+.faq-item.open .chev{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s var(--ease);color:var(--ink-soft);font-size:15.5px}
+.faq-a div{padding:0 0 22px}
+
+/* NEWSLETTER */
+.news{background:var(--ink);color:var(--paper);border-radius:24px;padding:56px;text-align:center;position:relative;overflow:hidden}
+.news::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 300px at 50% -20%,rgba(110,156,140,.25),transparent 60%)}
+.news>*{position:relative}
+.news h2{font-size:clamp(27px,3.6vw,40px);color:var(--paper);margin-bottom:12px}
+.news p{color:#B9B4A8;max-width:47ch;margin:0 auto 26px}
+.news form{display:flex;gap:10px;max-width:450px;margin:0 auto;flex-wrap:wrap}
+.news input{flex:1;min-width:200px;padding:14px 18px;border-radius:100px;border:1px solid #3a382f;background:#252319;color:var(--paper);font-family:'Inter';font-size:15px}
+.news input::placeholder{color:#8b8578}
+.news .btn{background:var(--green)}
+.news small{display:block;margin-top:14px;color:#8b8578;font-size:12.5px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px;margin-bottom:42px}
+.foot-brand p{font-size:14px;color:var(--ink-soft);max-width:30ch;margin:14px 0 18px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:.2s var(--ease)}
+.foot-social a:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.foot-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);margin-bottom:14px}
+.foot-col a{display:block;font-size:14px;color:var(--ink-soft);margin-bottom:9px;transition:.15s}
+.foot-col a:hover{color:var(--green)}
+.foot-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft)}
+
+/* CART DRAWER */
+.overlay{position:fixed;inset:0;background:rgba(27,26,22,.42);opacity:0;visibility:hidden;transition:.25s;z-index:80}
+.overlay.show{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;height:100%;width:410px;max-width:92vw;background:var(--paper);z-index:90;transform:translateX(100%);transition:transform .35s var(--ease);display:flex;flex-direction:column;box-shadow:var(--shadow-lg)}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid var(--line)}
+.drawer-head h3{font-size:21px}
+.drawer-close{background:none;border:none;cursor:pointer;color:var(--ink);padding:4px}
+.drawer-body{flex:1;overflow-y:auto;padding:14px 24px}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--ink-soft)}
+.cart-empty svg{color:var(--line);margin-bottom:14px}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.cart-item .ci-thumb{width:64px;height:56px;border-radius:10px;flex-shrink:0;overflow:hidden;border:1px solid var(--line)}
+.cart-item .ci-thumb .thumb{width:100%;height:100%;object-fit:cover}
+.cart-item .ci-info{flex:1;min-width:0}
+.cart-item .ci-info b{font-family:'Fraunces';font-weight:600;font-size:15.5px;display:block}
+.cart-item .ci-info span{font-size:12.5px;color:var(--ink-soft)}
+.cart-item .ci-bot{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.cart-item .ci-price{font-weight:600;font-size:15px}
+.ci-remove{background:none;border:none;color:var(--ink-soft);cursor:pointer;font-size:12.5px;text-decoration:underline}
+.ci-remove:hover{color:var(--clay)}
+.cart-upsell{margin-top:16px;background:var(--green-t);border:1px dashed var(--green-m);border-radius:12px;padding:14px 16px;font-size:13px;color:var(--green-d)}
+.cart-upsell b{font-family:'Fraunces';font-size:15px}
+.cart-upsell button{margin-top:8px;background:var(--green);color:#fff;border:none;padding:8px 14px;border-radius:100px;font-size:12.5px;font-weight:600;cursor:pointer}
+.drawer-foot{padding:20px 24px;border-top:1px solid var(--line);background:var(--paper-2)}
+.drawer-foot .row{display:flex;justify-content:space-between;margin-bottom:6px;font-size:14px;color:var(--ink-soft)}
+.drawer-foot .total{display:flex;justify-content:space-between;font-family:'Fraunces';font-weight:600;font-size:23px;color:var(--ink);margin:10px 0 16px}
+.drawer-foot small{display:block;text-align:center;color:var(--ink-soft);font-size:12px;margin-top:12px}
+
+/* MODAL */
+.modal-wrap{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:.22s}
+.modal-wrap.show{opacity:1;visibility:visible}
+.modal-bg{position:absolute;inset:0;background:rgba(27,26,22,.5)}
+.modal{position:relative;background:var(--paper);border-radius:22px;max-width:880px;width:100%;max-height:88vh;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--shadow-lg);transform:scale(.96);transition:.25s var(--ease)}
+.modal-wrap.show .modal{transform:scale(1)}
+.modal-visual{background:linear-gradient(150deg,#EFF3EE,#F6EDE2);display:flex;align-items:center;justify-content:center;padding:34px;border-right:1px solid var(--line)}
+.modal-visual .win{width:100%;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.modal-visual .win .thumb{width:100%;height:auto;display:block}
+.modal-info{padding:36px;overflow-y:auto}
+.modal-info .pill{margin-bottom:14px}
+.modal-info h2{font-size:29px;margin-bottom:10px}
+.modal-info .m-price{font-family:'Fraunces';font-weight:600;font-size:31px;margin:6px 0 18px}
+.modal-info .m-price s{font-family:'Inter';font-size:17px;color:var(--ink-soft);font-weight:400;margin-right:8px}
+.modal-info>p{color:var(--ink-soft);font-size:15px;margin-bottom:20px}
+.modal-info h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;color:var(--green)}
+.incl{list-style:none;margin-bottom:22px}
+.incl li{display:flex;gap:10px;font-size:14.5px;padding:6px 0;color:var(--ink)}
+.incl li svg{color:var(--green);flex-shrink:0;margin-top:3px}
+.m-meta{display:flex;gap:18px;font-size:13px;color:var(--ink-soft);margin-bottom:22px;flex-wrap:wrap}
+.m-meta b{color:var(--ink);font-weight:600}
+.modal-close{position:absolute;top:16px;right:16px;background:var(--paper);border:1px solid var(--line);width:38px;height:38px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;transition:.2s}
+.modal-close:hover{background:#fff;transform:rotate(90deg)}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(140%);background:var(--ink);color:var(--paper);padding:14px 24px;border-radius:100px;font-size:14px;font-weight:500;z-index:120;transition:.35s var(--ease);box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:9px}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast svg{color:#9FD0BE}
+
+@media(max-width:940px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{max-width:440px;margin:0 auto}
+  .values,.grid,.steps,.quotes{grid-template-columns:1fr 1fr}
+  .spot,.bundle{grid-template-columns:1fr}
+  .spot-visual{padding:34px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .modal{grid-template-columns:1fr;max-height:90vh}
+  .modal-visual{display:none}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .menu-toggle{display:block}
+  .values,.grid,.steps,.quotes,.bundle-list{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero{padding:44px 0 20px}
+  .section{padding:58px 0}
+  .news,.bundle{padding:32px 22px}
+  .spot-info{padding:30px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="announce">✦ Oferta de lanzamiento: <b>−15%</b> en tu primer pedido con el código <b>EMPIEZA15</b></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">método<span class="dot"></span></a>
+    <nav class="nav-links">
+      <a href="#catalogo">Plantillas</a>
+      <a href="#destacado">Destacado</a>
+      <a href="#pack">Pack completo</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <div class="nav-right">
+      <button class="cart-btn" id="cartBtn" aria-label="Abrir cesta">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count" id="cartCount" style="display:none">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy" data-reveal>
+      <span class="eyebrow">Plantillas de finanzas y productividad · en español</span>
+      <h1>Ordena tu <em>dinero</em>, tu tiempo y tus <em>metas</em>.</h1>
+      <p class="lead">Sistemas listos para usar que convierten el caos en un plan claro. Descárgalos y empieza hoy mismo.</p>
+      <div class="hero-cta">
+        <a href="#catalogo" class="btn btn-primary">Ver las plantillas</a>
+        <a href="#pack" class="btn btn-ghost">Pack completo −54%</a>
+      </div>
+      <div class="trust">
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Descarga inmediata</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Pago único, para siempre</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Actualizaciones gratis</span>
+      </div>
+    </div>
+    <div class="hero-visual" data-reveal>
+      <div class="deco-circle"></div>
+      <div class="hero-main" id="heroMock"></div>
+      <div class="hero-badge">✦ Móvil · iPad · PC</div>
+      <div class="hero-float">
+        <svg class="ring" viewBox="0 0 44 44"><circle cx="22" cy="22" r="17" fill="none" stroke="#E7EFEA" stroke-width="6"/><circle cx="22" cy="22" r="17" fill="none" stroke="#2E5A4C" stroke-width="6" stroke-linecap="round" stroke-dasharray="107" stroke-dashoffset="30" transform="rotate(-90 22 22)"/></svg>
+        <div><b>+1.378 €</b><span>ahorrados este año</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Google Sheets</span><span>Excel</span><span>Notion</span><span>PDF imprimible</span><span>GoodNotes · iPad</span><span>Pago único</span>
+      <span>Google Sheets</span><span>Excel</span><span>Notion</span><span>PDF imprimible</span><span>GoodNotes · iPad</span><span>Pago único</span>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Por qué Método</span>
+      <h2>Menos apps. Menos ansiedad. Un sistema que <span class="ital">sí</span> usas.</h2>
+      <p>No vendemos otra app de suscripción. Vendemos plantillas terminadas, bonitas y fáciles, que abres en las herramientas que ya tienes.</p>
+    </div>
+    <div class="values">
+      <div class="value" data-reveal>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Listo en 5 minutos</h3>
+        <p>Descargas, haces una copia y ya está funcionando. Sin instalar nada, sin curva de aprendizaje.</p>
+      </div>
+      <div class="value" data-reveal>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Diseño que da gusto</h3>
+        <p>Cálculos automáticos, gráficos claros y una estética cuidada. Organizarte deja de dar pereza.</p>
+      </div>
+      <div class="value" data-reveal>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Pago único</h3>
+        <p>Lo compras una vez y es tuyo para siempre, con las actualizaciones futuras incluidas gratis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="section" id="catalogo">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">El catálogo</span>
+      <h2>Elige tu sistema</h2>
+      <p>Cada plantilla resuelve un problema concreto. Empieza por una o llévate el pack completo.</p>
+    </div>
+    <div class="filters" id="filters" data-reveal></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- SPOTLIGHT -->
+<section class="section" id="destacado" style="padding-top:0">
+  <div class="wrap">
+    <div class="spot" data-reveal>
+      <div class="spot-visual"><div class="win" id="spotMock"></div></div>
+      <div class="spot-info">
+        <span class="eyebrow">★ El más vendido</span>
+        <h2>Control Total</h2>
+        <p>El panel de finanzas personales que lo reúne todo. Apuntas un gasto y ves al instante cuánto te queda, cuánto ahorras y si vas por buen camino.</p>
+        <ul class="spot-feat">
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Presupuesto mensual con categorías automáticas</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Objetivos de ahorro con barra de progreso</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Panel anual con gráficos y patrimonio neto</li>
+        </ul>
+        <div class="spot-buy">
+          <div class="price"><s>39 €</s>29 €</div>
+          <button class="btn btn-primary" data-buy="control-total">Añadir a la cesta</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLE -->
+<section class="section" id="pack" style="padding-top:0">
+  <div class="wrap">
+    <div class="bundle" data-reveal>
+      <div>
+        <span class="eyebrow">El pack completo</span>
+        <h2>Todo Método, en un solo lugar</h2>
+        <p>Las 8 plantillas de finanzas, productividad y negocio trabajando juntas. La forma más completa (y rentable) de ordenarlo todo.</p>
+        <ul class="bundle-list" id="bundleList"></ul>
+        <div class="trust" style="color:#CFE0D8">
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9FD0BE" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Acceso de por vida</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9FD0BE" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Nuevas plantillas incluidas</span>
+        </div>
+      </div>
+      <div class="bundle-price">
+        <div class="was">Suelto: 195 €</div>
+        <div class="big">89 €</div>
+        <div class="save">Ahorras 106 €</div>
+        <button class="btn btn-block" data-buy="pack-todo">Llévate el pack</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>De la compra al orden, en tres pasos</h2>
+    </div>
+    <div class="steps">
+      <div class="step" data-reveal><div class="num">1</div><h3>Compra segura</h3><p>Pagas con tarjeta en un checkout cifrado. Recibes el acceso al instante en tu correo.</p></div>
+      <div class="step" data-reveal><div class="num">2</div><h3>Haz tu copia</h3><p>Abres el enlace y duplicas la plantilla en tu Google Drive, Excel o Notion con un clic.</p></div>
+      <div class="step" data-reveal><div class="num">3</div><h3>Úsala hoy</h3><p>Rellena tus datos siguiendo la mini-guía incluida. En minutos tienes tu sistema en marcha.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Lo que dicen</span>
+      <h2>Gente que por fin se aclaró</h2>
+      <p style="font-size:13px">Reseñas ilustrativas de una tienda de demostración.</p>
+    </div>
+    <div class="quotes">
+      <div class="quote" data-reveal><div class="stars">★★★★★</div><p>"Llevaba años intentando cuadrar mis gastos en apps que abandonaba. Con Control Total lo veo todo de un vistazo y no lo he dejado."</p><div class="who"><div class="av">L</div><div><b>Lucía M.</b><span>Diseñadora freelance</span></div></div></div>
+      <div class="quote" data-reveal><div class="stars">★★★★★</div><p>"El pack completo me parece un regalo por lo que cuesta. El CRM de clientes solo ya vale el precio entero."</p><div class="who"><div class="av">D</div><div><b>Diego R.</b><span>Fotógrafo</span></div></div></div>
+      <div class="quote" data-reveal><div class="stars">★★★★★</div><p>"Simple, bonito y en español. Se nota que está pensado para usarlo de verdad, no para venderte un curso después."</p><div class="who"><div class="av">A</div><div><b>Ana G.</b><span>Estudiante</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Todo lo que necesitas saber</h2>
+    </div>
+    <div class="faq" id="faq" data-reveal></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="news" data-reveal>
+      <h2>Una plantilla gratis para empezar</h2>
+      <p>Suscríbete y te enviamos el <b>Mini-presupuesto mensual</b> gratis, más un truco de organización cada semana.</p>
+      <form id="newsForm">
+        <input type="email" placeholder="tu@correo.com" required aria-label="Tu correo" />
+        <button class="btn btn-primary" type="submit">Quiero mi plantilla</button>
+      </form>
+      <small>Sin spam. Te puedes dar de baja cuando quieras.</small>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="brand" style="font-size:22px">método<span class="dot"></span></a>
+        <p>Sistemas digitales para ordenar tu dinero, tu tiempo y tus metas. Hecho en español.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Instagram"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3v3.5a4.5 4.5 0 0 0 4 4.4V14a7.5 7.5 0 0 1-4-1.2V16a5.5 5.5 0 1 1-5.5-5.5c.2 0 .3 0 .5.03v3.1a2.5 2.5 0 1 0 2 2.45V3H16z"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M9 20c-.3-1.5 0-3 .5-4.5l1.2-4.8a3 3 0 1 1 3 1c-.5 2-1 4 .8 4.7 2 .8 3.7-1.6 3.7-4.3C18.2 8.4 15.7 7 13 7a5.5 5.5 0 0 0-5.7 5.5c0 1 .4 2 1 2.6"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Tienda</h4>
+        <a href="#catalogo">Todas las plantillas</a>
+        <a href="#pack">Pack completo</a>
+        <a href="#catalogo" data-filter="Finanzas">Finanzas</a>
+        <a href="#catalogo" data-filter="Productividad">Productividad</a>
+        <a href="#catalogo" data-filter="Creadores">Creadores</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ayuda</h4>
+        <a href="#destacado">Destacado</a>
+        <a href="#faq">Preguntas frecuentes</a>
+        <a href="mailto:hola@metodo.studio">Contacto</a>
+        <a href="productos/GUIA-DE-USO.md">Guía de instalación</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="terminos.html">Términos</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="reembolsos.html">Reembolsos</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Método. Todos los derechos reservados.</span>
+      <span>Hecho con cariño para gente ocupada · hola@metodo.studio</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Cesta">
+  <div class="drawer-head">
+    <h3>Tu cesta</h3>
+    <button class="drawer-close" id="drawerClose" aria-label="Cerrar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot" style="display:none">
+    <div class="row"><span>Subtotal</span><span id="subtotal">0 €</span></div>
+    <div class="row" style="color:var(--green)"><span>Entrega digital</span><span>Gratis</span></div>
+    <div class="total"><span>Total</span><span id="total">0 €</span></div>
+    <button class="btn btn-primary btn-block" id="checkoutBtn">Finalizar compra</button>
+    <small>Pago seguro · Descarga inmediata tras el pago</small>
+  </div>
+</aside>
+
+<!-- MODAL -->
+<div class="modal-wrap" id="modalWrap">
+  <div class="modal-bg" id="modalBg"></div>
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="modal-visual"><div class="win" id="modalVisual"></div></div>
+    <div class="modal-info" id="modalInfo"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span id="toastMsg">Añadido a la cesta</span></div>
+
+<script>
+/* ===== CONFIG editable — pega tus enlaces de pago (Gumroad/Lemon/Stripe) ===== */
+const CONFIG = {
+  moneda: "€",
+  enlacesPago: {
+    "control-total":"", "libertad-freelance":"", "reto-52-semanas":"", "segundo-cerebro":"",
+    "planner-2026":"", "habitos":"", "calendario-contenido":"", "cliente-crm":"", "pack-todo":""
+  }
+};
+
+/* ===== CATÁLOGO ===== */
+const PRODUCTS = [
+  {id:"control-total",nombre:"Control Total",cat:"Finanzas",precio:29,antes:39,badge:"Más vendido",resumen:"El panel de finanzas personales que lo reúne todo: presupuesto, gastos, ahorro y patrimonio.",formato:"Google Sheets + Excel",nivel:"Todos los niveles",incluye:["Presupuesto mensual con categorías automáticas","Seguimiento de gastos e ingresos","Objetivos de ahorro con barra de progreso","Cálculo de patrimonio neto","Panel anual con gráficos","Mini-guía de puesta en marcha (PDF)"]},
+  {id:"libertad-freelance",nombre:"Libertad",cat:"Finanzas",precio:39,antes:49,badge:"Para autónomos",resumen:"Finanzas para freelancers: ingresos, facturas, gastos deducibles y estimación de IVA e IRPF.",formato:"Google Sheets + Excel",nivel:"Freelance / autónomo",incluye:["Registro de facturas emitidas y cobradas","Gastos deducibles por categoría","Estimador de IVA trimestral","Previsión de IRPF a guardar","Panel de ingresos por cliente y mes","Recordatorio de trimestres (130/303)"]},
+  {id:"reto-52-semanas",nombre:"Reto 52 Semanas",cat:"Finanzas",precio:9,antes:14,badge:"Bajo 10 €",resumen:"El reto de ahorro más famoso, automatizado. Ahorra hasta 1.378 € en un año sin darte cuenta.",formato:"Sheets + PDF imprimible",nivel:"Principiante",incluye:["Plan de 52 semanas automático","Versión creciente y versión fija","Barra de progreso visual","Lámina imprimible para colorear","Modo reto en pareja"]},
+  {id:"segundo-cerebro",nombre:"Segundo Cerebro",cat:"Productividad",precio:29,antes:39,badge:"Sistema estrella",resumen:"Tu vida entera organizada en un solo sitio: proyectos, tareas, notas, metas y hábitos.",formato:"Notion",nivel:"Todos los niveles",incluye:["Panel principal tipo 'inicio del día'","Gestor de proyectos y tareas","Base de notas y recursos","Metas anuales, trimestrales y semanales","Seguimiento de hábitos","Sistema P.A.R.A. ya montado"]},
+  {id:"planner-2026",nombre:"Planner 2026",cat:"Productividad",precio:19,antes:29,badge:"Nuevo",resumen:"Planificador digital anual, minimalista e hiperenlazado. Para iPad, tableta u ordenador.",formato:"PDF (GoodNotes/iPad)",nivel:"Todos los niveles",incluye:["Vista anual y 12 meses enlazados","Planificador semanal y diario","Páginas de metas y revisión mensual","Secciones de notas punteadas","Diseño minimalista en 3 colores","Versión con fecha y sin fecha"]},
+  {id:"habitos",nombre:"Hábitos",cat:"Productividad",precio:12,antes:18,resumen:"Crea rutinas que duran. Seguimiento visual de hábitos con rachas y estadísticas.",formato:"Sheets + PDF imprimible",nivel:"Principiante",incluye:["Seguimiento de hasta 15 hábitos","Cálculo de rachas automático","Vista mensual y anual","Panel de estadísticas de constancia","Lámina imprimible de hábitos"]},
+  {id:"calendario-contenido",nombre:"Calendario de Contenido",cat:"Creadores",precio:24,antes:34,badge:"Para creadores",resumen:"Planifica, produce y mide tu contenido en todas las redes desde un único panel.",formato:"Notion + Sheets",nivel:"Creadores / marcas",incluye:["Calendario editorial multiplataforma","Banco de ideas y ganchos","Estados de producción (idea→publicado)","Seguimiento de métricas por post","Planificador de campañas","Biblioteca de hashtags"]},
+  {id:"cliente-crm",nombre:"Cliente",cat:"Creadores",precio:34,antes:44,badge:"CRM ligero",resumen:"El CRM sencillo para freelancers y pequeños negocios: leads, clientes, proyectos e ingresos.",formato:"Notion + Sheets",nivel:"Freelance / negocio",incluye:["Embudo de leads (interesado→cliente)","Ficha por cliente y proyecto","Seguimiento de presupuestos enviados","Panel de ingresos previstos vs cobrados","Recordatorios de seguimiento","Plantillas de mensajes"]}
+];
+
+const FAQS = [
+  ["¿Cómo recibo la plantilla?","Justo después de pagar recibes un correo con el enlace de descarga y acceso inmediato. No hay que esperar nada ni instalar programas."],
+  ["¿Necesito saber de Excel o Notion?","No. Cada plantilla viene con una mini-guía paso a paso y todo está pre-montado. Solo haces una copia y empiezas a rellenar tus datos."],
+  ["¿Es un pago único o una suscripción?","Pago único. La plantilla es tuya para siempre e incluye las futuras actualizaciones sin coste adicional."],
+  ["¿Funciona en móvil y iPad?","Sí. Las de Google Sheets y Notion funcionan en móvil, iPad y ordenador. El Planner está optimizado para apps de escritura tipo GoodNotes en iPad."],
+  ["¿Puedo pedir un reembolso?","Al ser productos digitales de descarga inmediata, revisa bien la descripción antes de comprar. Si algo no funciona, escríbenos y lo solucionamos."],
+  ["¿Puedo comprar solo una plantilla?","Claro. Cada una funciona por separado. Si quieres varias, el Pack completo sale mucho más a cuenta (−54%)."]
+];
+
+/* =========================================================
+   Mockups realistas (SVG) por producto — "screenshots"
+   ========================================================= */
+const F={ink:"#1B1A16",green:"#2E5A4C",gd:"#22463A",gl:"#E7EFEA",gm:"#8FB3A6",clay:"#B8734A",clayT:"#F5EAE1",sand:"#E7DCC7",line:"#EDE5D6",soft:"#9A9184",bg:"#F1EBDF",mut:"#F4EEE2"};
+function win(label,inner){
+  return `<svg class="thumb" viewBox="0 0 340 255" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <rect width="340" height="255" fill="${F.bg}"/>
+    <rect x="16" y="14" width="308" height="228" rx="15" fill="#ffffff" stroke="#EADFCD"/>
+    <circle cx="35" cy="32" r="3.1" fill="#E3DBCC"/><circle cx="46" cy="32" r="3.1" fill="#E3DBCC"/><circle cx="57" cy="32" r="3.1" fill="#E3DBCC"/>
+    <text x="170" y="35.5" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#B7AD9B">${label}</text>
+    <line x1="16" y1="47" x2="324" y2="47" stroke="#F1EADB"/>
+    ${inner}
+  </svg>`;
+}
+const kpi=(x,v,l,c)=>`<rect x="${x}" y="60" width="84" height="46" rx="9" fill="${c==F.clay?F.clayT:'#F1F5F2'}"/><text x="${x+12}" y="84" font-family="'Fraunces',serif" font-size="16" font-weight="600" fill="${c}">${v}</text><text x="${x+12}" y="98" font-family="'Inter',sans-serif" font-size="7.2" font-weight="600" letter-spacing="0.6" fill="${F.soft}">${l}</text>`;
+const MOCK={
+  "control-total":()=>win("CONTROL TOTAL",
+    kpi(34,"703€","DISPONIBLE",F.green)+kpi(128,"+340€","AHORRO",F.green)+kpi(222,"18%","META",F.clay)+
+    `<text x="34" y="128" font-family="'Inter',sans-serif" font-size="8.5" font-weight="600" fill="#6E665A">Gasto semanal</text>
+     <line x1="34" y1="212" x2="306" y2="212" stroke="#EFE7D8"/>
+     <g fill="${F.green}">
+      <rect x="40" y="178" width="26" height="34" rx="4" opacity=".32"/><rect x="80" y="160" width="26" height="52" rx="4" opacity=".5"/>
+      <rect x="120" y="186" width="26" height="26" rx="4" opacity=".38"/><rect x="160" y="150" width="26" height="62" rx="4"/>
+      <rect x="200" y="168" width="26" height="44" rx="4" opacity=".6"/><rect x="240" y="180" width="26" height="32" rx="4" opacity=".44"/>
+      <rect x="280" y="158" width="26" height="54" rx="4" opacity=".5"/>
+     </g>`),
+  "libertad-freelance":()=>win("LIBERTAD · FREELANCE",
+    `<text x="34" y="66" font-family="'Inter',sans-serif" font-size="8.5" font-weight="600" fill="#6E665A">Facturas · T3</text>
+     ${[["Estudio Norte","1.452€"],["Cafés Lúa","544€"],["Ayto. Vega","968€"],["Marca Sol","786€"]].map((r,i)=>{const y=76+i*32;return `<rect x="34" y="${y}" width="150" height="24" rx="7" fill="#F7F2E9"/><circle cx="47" cy="${y+12}" r="4" fill="${F.gm}"/><rect x="57" y="${y+8}" width="58" height="5" rx="2.5" fill="#DED4C1"/><text x="176" y="${y+15}" text-anchor="end" font-family="'Inter',sans-serif" font-size="8.5" font-weight="600" fill="${F.green}">${r[1]}</text>`;}).join("")}
+     <rect x="200" y="72" width="106" height="132" rx="12" fill="${F.green}"/>
+     <text x="216" y="96" font-family="'Inter',sans-serif" font-size="7.5" fill="#AFC9BE" letter-spacing="0.5">IVA A PAGAR · T3</text>
+     <text x="216" y="124" font-family="'Fraunces',serif" font-size="24" font-weight="600" fill="#fff">424€</text>
+     <line x1="216" y1="136" x2="290" y2="136" stroke="#3C6657"/>
+     <text x="216" y="156" font-family="'Inter',sans-serif" font-size="7.5" fill="#CFE0D8">Repercutido 651€</text>
+     <text x="216" y="170" font-family="'Inter',sans-serif" font-size="7.5" fill="#CFE0D8">Soportado 227€</text>
+     <rect x="216" y="180" width="74" height="16" rx="8" fill="#3C6657"/><text x="253" y="191" text-anchor="middle" font-family="'Inter',sans-serif" font-size="7.5" font-weight="600" fill="#DDECE5">Modelo 303</text>`),
+  "reto-52-semanas":()=>win("RETO 52 SEMANAS",
+    `<circle cx="94" cy="128" r="40" fill="none" stroke="#EDE5D6" stroke-width="13"/>
+     <circle cx="94" cy="128" r="40" fill="none" stroke="${F.green}" stroke-width="13" stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="186" transform="rotate(-90 94 128)"/>
+     <text x="94" y="126" text-anchor="middle" font-family="'Fraunces',serif" font-size="18" font-weight="600" fill="${F.ink}">26%</text>
+     <text x="94" y="140" text-anchor="middle" font-family="'Inter',sans-serif" font-size="7.5" fill="${F.soft}">semana 14</text>
+     <text x="168" y="94" font-family="'Inter',sans-serif" font-size="8.5" fill="${F.soft}">Meta del año</text>
+     <text x="168" y="124" font-family="'Fraunces',serif" font-size="27" font-weight="600" fill="${F.green}">1.378€</text>
+     ${Array.from({length:13}).map((_,i)=>`<rect x="${168+i*11}" y="150" width="8" height="8" rx="2" fill="${i<4?F.green:'#EAE1D0'}"/>`).join("")}
+     ${Array.from({length:13}).map((_,i)=>`<rect x="${168+i*11}" y="162" width="8" height="8" rx="2" fill="${'#EAE1D0'}"/>`).join("")}`),
+  "segundo-cerebro":()=>win("SEGUNDO CEREBRO",
+    `<rect x="16" y="47" width="74" height="195" fill="#FAF7F0"/>
+     <rect x="28" y="64" width="46" height="6" rx="3" fill="#DFD5C3"/>
+     ${[0,1,2,3].map(i=>`<rect x="28" y="${84+i*18}" width="8" height="8" rx="2" fill="${i==0?F.green:'#E0D7C6'}"/><rect x="42" y="${85+i*18}" width="${40-i*4}" height="6" rx="3" fill="#E8DFCE"/>`).join("")}
+     <text x="104" y="76" font-family="'Fraunces',serif" font-size="14" font-weight="600" fill="${F.ink}">Inicio del día</text>
+     <text x="104" y="94" font-family="'Inter',sans-serif" font-size="8" fill="${F.soft}">Enfoque de hoy</text>
+     ${[["Terminar propuesta",1],["Llamar al gestor",1],["Repasar metas",0]].map((r,i)=>{const y=108+i*22;return `<circle cx="112" cy="${y}" r="6.5" fill="${r[1]?F.green:'none'}" stroke="${r[1]?F.green:'#CFC6B4'}" stroke-width="1.5"/>${r[1]?`<path d="M108.5 ${y} l2.5 2.5 L116 ${y-3}" stroke="#fff" stroke-width="1.4" fill="none"/>`:''}<rect x="126" y="${y-4}" width="${150-i*20}" height="7" rx="3.5" fill="${r[1]?'#E7DFCE':'#EFE7D8'}"/>`;}).join("")}
+     <rect x="104" y="176" width="204" height="52" rx="9" fill="#F7F2E9"/>
+     <rect x="116" y="188" width="70" height="6" rx="3" fill="#DED4C1"/><rect x="116" y="200" width="180" height="5" rx="2.5" fill="#E8DFCE"/><rect x="116" y="211" width="150" height="5" rx="2.5" fill="#EFE7D8"/>`),
+  "planner-2026":()=>win("PLANNER 2026",
+    `<text x="34" y="66" font-family="'Fraunces',serif" font-size="13" font-weight="600" fill="${F.green}">Septiembre</text>
+     ${["L","M","X","J","V","S","D"].map((d,i)=>`<text x="${44+i*20}" y="82" text-anchor="middle" font-family="'Inter',sans-serif" font-size="7" fill="${F.soft}">${d}</text>`).join("")}
+     ${Array.from({length:35}).map((_,i)=>{const c=i%7,r=Math.floor(i/7);const x=34+c*20,y=88+r*22;const hl=[10,17,23].includes(i);return `<rect x="${x}" y="${y}" width="17" height="19" rx="3" fill="${hl?F.gl:'#FBF8F2'}" stroke="#EFE7D8"/>${hl?`<circle cx="${x+8.5}" cy="${y+9}" r="2.5" fill="${F.green}"/>`:''}`;}).join("")}
+     <rect x="196" y="60" width="112" height="168" rx="10" fill="#F7F2E9"/>
+     <text x="208" y="80" font-family="'Fraunces',serif" font-size="11" font-weight="600" fill="${F.ink}">Por hacer</text>
+     ${[1,1,0,0,0].map((c,i)=>{const y=96+i*22;return `<rect x="208" y="${y}" width="12" height="12" rx="3" fill="${c?F.green:'none'}" stroke="${c?F.green:'#CFC6B4'}" stroke-width="1.4"/>${c?`<path d="M211 ${y+6} l2 2 L217 ${y+3}" stroke="#fff" stroke-width="1.4" fill="none"/>`:''}<rect x="228" y="${y+2}" width="${68-i*6}" height="7" rx="3.5" fill="${c?'#E7DFCE':'#EFE7D8'}"/>`;}).join("")}`),
+  "habitos":()=>win("HÁBITOS",
+    `<text x="34" y="66" font-family="'Inter',sans-serif" font-size="8.5" font-weight="600" fill="#6E665A">Septiembre</text>
+     <rect x="240" y="56" width="66" height="20" rx="10" fill="${F.clayT}"/><text x="273" y="69.5" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8" font-weight="700" fill="${F.clay}">12 días 🔥</text>
+     ${["Agua","Ejercicio","Leer","Dormir","Foco"].map((h,r)=>{const y=88+r*28;return `<text x="34" y="${y+9}" font-family="'Inter',sans-serif" font-size="8" fill="${F.soft}">${h}</text>`+Array.from({length:7}).map((_,c)=>{const on=(c+r)%3!==2 && c<6-r+2;return `<circle cx="${104+c*30}" cy="${y+5}" r="7" fill="${on?F.green:'none'}" stroke="${on?F.green:'#DED4C1'}" stroke-width="1.5" opacity="${on?(0.55+0.45*((c+1)/7)):1}"/>`;}).join("");}).join("")}`),
+  "calendario-contenido":()=>win("CALENDARIO DE CONTENIDO",
+    `${[["Idea","#EFE7D8"],["Editando","#F5EAE1"],["Publicado","#E7EFEA"]].map((col,i)=>{const x=34+i*94;return `<rect x="${x}" y="60" width="86" height="168" rx="10" fill="#FBF8F2" stroke="#EFE7D8"/><rect x="${x+10}" y="72" width="46" height="7" rx="3.5" fill="#DED4C1"/><circle cx="${x+72}" cy="75" r="4" fill="${col[1]}" stroke="#E0D7C6"/>`;}).join("")}
+     ${[[0,90,F.green],[0,138,F.gm],[1,90,F.clay],[2,90,F.green],[2,138,F.gm]].map(c=>{const x=44+c[0]*94;const y=c[1];return `<rect x="${x}" y="${y}" width="66" height="40" rx="7" fill="#fff" stroke="#EFE7D8"/><rect x="${x+8}" y="${y+9}" width="12" height="6" rx="3" fill="${c[2]}"/><rect x="${x+8}" y="${y+21}" width="48" height="5" rx="2.5" fill="#E7DFCE"/><rect x="${x+8}" y="${y+29}" width="34" height="5" rx="2.5" fill="#EFE7D8"/>`;}).join("")}`),
+  "cliente-crm":()=>win("CLIENTE · CRM",
+    `${[["Lead","#EFE7D8"],["Propuesta","#F5EAE1"],["Cliente","#E7EFEA"]].map((col,i)=>{const x=34+i*94;return `<rect x="${x}" y="60" width="86" height="168" rx="10" fill="#FBF8F2" stroke="#EFE7D8"/><rect x="${x+10}" y="72" width="44" height="7" rx="3.5" fill="#DED4C1"/>`;}).join("")}
+     ${[[0,90,"G"],[1,90,"M"],[2,90,"E"],[2,142,"C"]].map(c=>{const x=44+c[0]*94;const y=c[1];return `<rect x="${x}" y="${y}" width="66" height="44" rx="7" fill="#fff" stroke="#EFE7D8"/><circle cx="${x+15}" cy="${y+15}" r="9" fill="${F.green}"/><text x="${x+15}" y="${y+18}" text-anchor="middle" font-family="'Fraunces',serif" font-size="9" fill="#fff">${c[2]}</text><rect x="${x+29}" y="${y+9}" width="30" height="6" rx="3" fill="#DED4C1"/><rect x="${x+29}" y="${y+19}" width="22" height="5" rx="2.5" fill="#EFE7D8"/><rect x="${x+8}" y="${y+32}" width="40" height="6" rx="3" fill="${F.gl}"/>`;}).join("")}`),
+  "pack-todo":()=>win("PACK · TODO MÉTODO",
+    `<g transform="rotate(-6 120 140)"><rect x="44" y="78" width="150" height="118" rx="11" fill="#fff" stroke="#E6DECF"/><rect x="58" y="94" width="60" height="9" rx="4" fill="${F.green}"/><rect x="58" y="112" width="120" height="6" rx="3" fill="#E7DFCE"/><rect x="58" y="126" width="100" height="6" rx="3" fill="#EFE7D8"/><rect x="58" y="146" width="26" height="30" rx="4" fill="${F.gl}"/><rect x="90" y="140" width="26" height="36" rx="4" fill="${F.green}" opacity=".5"/><rect x="122" y="150" width="26" height="26" rx="4" fill="${F.gl}"/><rect x="154" y="134" width="26" height="42" rx="4" fill="${F.green}"/></g>
+     <g transform="rotate(7 230 140)"><rect x="168" y="70" width="132" height="120" rx="11" fill="#fff" stroke="#E6DECF"/><circle cx="196" cy="98" r="12" fill="${F.clay}" opacity=".8"/><rect x="216" y="92" width="64" height="7" rx="3.5" fill="#DED4C1"/><rect x="216" y="104" width="48" height="6" rx="3" fill="#EFE7D8"/><rect x="182" y="128" width="104" height="7" rx="3.5" fill="#E7DFCE"/><rect x="182" y="144" width="104" height="7" rx="3.5" fill="#EFE7D8"/><rect x="182" y="160" width="70" height="7" rx="3.5" fill="#EFE7D8"/></g>
+     <rect x="132" y="186" width="76" height="26" rx="13" fill="${F.ink}"/><text x="170" y="203" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="${F.mut}">8 plantillas</text>`)
+};
+function mockFor(id){ return (MOCK[id]||MOCK["control-total"])(); }
+
+/* ===== estado + carrito ===== */
+const money=n=>n.toLocaleString('es-ES')+" "+CONFIG.moneda;
+let cart=[]; try{cart=JSON.parse(localStorage.getItem('metodo_cart'))||[];}catch(e){cart=[];}
+const saveCart=()=>{try{localStorage.setItem('metodo_cart',JSON.stringify(cart));}catch(e){}};
+const findP=id=>id==="pack-todo"?{id:"pack-todo",nombre:"Pack completo Método",cat:"Packs",precio:89,antes:195}:PRODUCTS.find(p=>p.id===id);
+let io=null;
+
+/* hero + spotlight mocks */
+document.getElementById('heroMock').innerHTML=MOCK["control-total"]();
+document.getElementById('spotMock').innerHTML=MOCK["control-total"]();
+
+/* catálogo */
+const grid=document.getElementById('grid'),filtersEl=document.getElementById('filters');
+const cats=["Todo",...new Set(PRODUCTS.map(p=>p.cat))];let activeCat="Todo";
+function renderFilters(){filtersEl.innerHTML=cats.map(c=>`<button class="filter ${c===activeCat?'active':''}" data-cat="${c}">${c}</button>`).join('');}
+function renderGrid(){
+  const list=activeCat==="Todo"?PRODUCTS:PRODUCTS.filter(p=>p.cat===activeCat);
+  grid.innerHTML=list.map(p=>`
+    <article class="card" data-id="${p.id}" data-reveal>
+      <div class="card-visual">
+        ${p.badge?`<span class="card-badge pill">${p.badge}</span>`:''}
+        <span class="card-cat">${p.cat}</span>
+        ${mockFor(p.id)}
+      </div>
+      <div class="card-body">
+        <h3>${p.nombre}</h3>
+        <p>${p.resumen}</p>
+        <div class="card-foot">
+          <div class="price"><s>${p.antes} €</s>${p.precio} €</div>
+          <span class="add">Añadir <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+      </div>
+    </article>`).join('');
+  observeReveals();
+}
+renderFilters();renderGrid();
+filtersEl.addEventListener('click',e=>{const b=e.target.closest('.filter');if(!b)return;activeCat=b.dataset.cat;renderFilters();renderGrid();});
+grid.addEventListener('click',e=>{const card=e.target.closest('.card');if(!card)return;const id=card.dataset.id;if(e.target.closest('.add'))addToCart(id);else openModal(id);});
+
+document.getElementById('bundleList').innerHTML=PRODUCTS.map(p=>`<li>${p.nombre}</li>`).join('');
+
+document.getElementById('faq').innerHTML=FAQS.map(([q,a])=>`<div class="faq-item"><button class="faq-q">${q}<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div>${a}</div></div></div>`).join('');
+document.getElementById('faq').addEventListener('click',e=>{const q=e.target.closest('.faq-q');if(!q)return;q.parentElement.classList.toggle('open');const a=q.nextElementSibling;a.style.maxHeight=q.parentElement.classList.contains('open')?a.scrollHeight+'px':0;});
+
+/* carrito */
+const drawer=document.getElementById('drawer'),overlay=document.getElementById('overlay'),cartCount=document.getElementById('cartCount');
+function addToCart(id){if(!cart.includes(id)){cart.push(id);saveCart();renderCart();toast(`“${findP(id).nombre}” añadido`);}else toast('Ya está en tu cesta');updateCount();openDrawer();}
+function removeFromCart(id){cart=cart.filter(x=>x!==id);saveCart();renderCart();updateCount();}
+function updateCount(){const n=cart.length;cartCount.textContent=n;cartCount.style.display=n?'flex':'none';}
+function renderCart(){
+  const body=document.getElementById('drawerBody'),foot=document.getElementById('drawerFoot');
+  if(!cart.length){body.innerHTML=`<div class="cart-empty"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p>Tu cesta está vacía.</p><p style="font-size:13px;margin-top:6px">Explora el catálogo y encuentra tu sistema.</p></div>`;foot.style.display='none';return;}
+  body.innerHTML=cart.map(id=>{const p=findP(id);return `<div class="cart-item"><div class="ci-thumb">${mockFor(id)}</div><div class="ci-info"><b>${p.nombre}</b><span>${p.cat}</span><div class="ci-bot"><span class="ci-price">${p.precio} €</span><button class="ci-remove" data-rm="${id}">Quitar</button></div></div></div>`;}).join('');
+  const hasPack=cart.includes('pack-todo');
+  if(cart.length>=2 && !hasPack){body.innerHTML+=`<div class="cart-upsell"><b>¿Los quieres todos?</b><br>El Pack completo (8 plantillas) por 89 € en vez de 195 €.<br><button data-buy="pack-todo">Cambiar al pack −54%</button></div>`;}
+  const subtotal=cart.reduce((s,id)=>s+findP(id).precio,0);
+  document.getElementById('subtotal').textContent=money(subtotal);document.getElementById('total').textContent=money(subtotal);foot.style.display='block';
+}
+document.getElementById('drawerBody').addEventListener('click',e=>{const b=e.target.closest('[data-rm]');if(b)removeFromCart(b.dataset.rm);});
+function openDrawer(){drawer.classList.add('open');overlay.classList.add('show');}
+function closeDrawer(){drawer.classList.remove('open');overlay.classList.remove('show');}
+document.getElementById('cartBtn').addEventListener('click',openDrawer);
+document.getElementById('drawerClose').addEventListener('click',closeDrawer);
+overlay.addEventListener('click',closeDrawer);
+document.getElementById('checkoutBtn').addEventListener('click',()=>{
+  const links=cart.map(id=>({id,url:CONFIG.enlacesPago[id]})).filter(x=>x.url);
+  if(!links.length){toast('Enlaces de pago aún no configurados');alert("Esta es una tienda lista para vender.\n\nPara aceptar pagos reales, solo hay que pegar los enlaces de Gumroad / Lemon Squeezy / Stripe en el archivo CONFIG (ver PAGOS.md).\n\nCada plantilla se entrega automáticamente tras el pago.");return;}
+  window.open(links[0].url,'_blank');if(links.length>1)toast('Abriendo el primer producto; compra el resto desde la cesta');
+});
+
+/* modal */
+const modalWrap=document.getElementById('modalWrap');
+function openModal(id){
+  const p=findP(id);
+  document.getElementById('modalVisual').innerHTML=mockFor(id);
+  document.getElementById('modalInfo').innerHTML=`
+    <span class="pill">${p.cat}${p.badge?` · ${p.badge}`:''}</span>
+    <h2>${p.nombre}</h2>
+    <div class="m-price"><s>${p.antes} €</s>${p.precio} €</div>
+    <p>${p.resumen}</p>
+    <div class="m-meta"><span>Formato: <b>${p.formato}</b></span><span>Nivel: <b>${p.nivel}</b></span></div>
+    <h4>Qué incluye</h4>
+    <ul class="incl">${p.incluye.map(i=>`<li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>${i}</li>`).join('')}</ul>
+    <button class="btn btn-primary btn-block" data-buy="${p.id}">Añadir a la cesta · ${p.precio} €</button>`;
+  modalWrap.classList.add('show');document.body.style.overflow='hidden';
+}
+function closeModal(){modalWrap.classList.remove('show');document.body.style.overflow='';}
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('modalBg').addEventListener('click',closeModal);
+
+document.addEventListener('click',e=>{const b=e.target.closest('[data-buy]');if(b){addToCart(b.dataset.buy);closeModal();}});
+document.querySelectorAll('[data-filter]').forEach(a=>a.addEventListener('click',()=>{activeCat=a.dataset.filter;renderFilters();renderGrid();}));
+document.getElementById('newsForm').addEventListener('submit',e=>{e.preventDefault();e.target.reset();toast('¡Listo! Revisa tu correo 📩');});
+document.getElementById('menuToggle').addEventListener('click',()=>{const n=document.querySelector('.nav-links');n.style.display=getComputedStyle(n).display==='none'?'flex':'none';});
+
+let toastT;function toast(msg){const t=document.getElementById('toast');document.getElementById('toastMsg').textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2400);}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeDrawer();}});
+
+/* reveal on scroll */
+function observeReveals(){
+  if(!('IntersectionObserver'in window)){document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('in'));return;}
+  if(!io)io=new IntersectionObserver((ents)=>{ents.forEach((en,i)=>{if(en.isIntersecting){en.target.style.transitionDelay=(en.target.closest('.grid,.values,.quotes,.steps')?(i%3)*70:0)+'ms';en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-reveal]:not(.in)').forEach(el=>io.observe(el));
+}
+observeReveals();
+updateCount();renderCart();
+</script>
+</body>
+</html>
