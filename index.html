@@ -6,6 +6,7 @@
 <title>Método — Sistemas para ordenar tu dinero, tu tiempo y tus metas</title>
 <meta name="description" content="Plantillas premium de finanzas y productividad en español. Presupuestos, planificadores, hábitos y CRM listos para usar hoy. Descarga inmediata." />
 <meta name="theme-color" content="#2E5A4C" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23F6F1E8'/%3E%3Ctext x='6' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' fill='%231B1A16'%3Em%3C/text%3E%3Ccircle cx='23' cy='20' r='3' fill='%232E5A4C'/%3E%3C/svg%3E" />
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Método" />
@@ -309,7 +310,11 @@ footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
   .modal-visual{display:none}
 }
 @media(max-width:640px){
-  .nav-links{display:none}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--shadow);flex-direction:column;gap:0;padding:6px 24px 14px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:14px 2px;font-size:16px;border-bottom:1px solid var(--line);color:var(--ink)}
+  .nav-links a:last-child{border-bottom:none}
+  .nav-links a::after{display:none}
   .menu-toggle{display:block}
   .values,.grid,.steps,.quotes,.bundle-list{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
@@ -772,7 +777,14 @@ document.getElementById('drawerClose').addEventListener('click',closeDrawer);
 overlay.addEventListener('click',closeDrawer);
 document.getElementById('checkoutBtn').addEventListener('click',()=>{
   const links=cart.map(id=>({id,url:CONFIG.enlacesPago[id]})).filter(x=>x.url);
-  if(!links.length){toast('Enlaces de pago aún no configurados');alert("Esta es una tienda lista para vender.\n\nPara aceptar pagos reales, solo hay que pegar los enlaces de Gumroad / Lemon Squeezy / Stripe en el archivo CONFIG (ver PAGOS.md).\n\nCada plantilla se entrega automáticamente tras el pago.");return;}
+  if(!links.length){
+    closeDrawer();
+    const news=document.querySelector('.news');
+    if(news)news.scrollIntoView({behavior:'smooth',block:'center'});
+    setTimeout(()=>{const inp=document.querySelector('#newsForm input');if(inp)inp.focus();},600);
+    toast('¡Abrimos muy pronto! Déjanos tu email y te avisamos 💌');
+    return;
+  }
   window.open(links[0].url,'_blank');if(links.length>1)toast('Abriendo el primer producto; compra el resto desde la cesta');
 });
 
@@ -799,7 +811,9 @@ document.getElementById('modalBg').addEventListener('click',closeModal);
 document.addEventListener('click',e=>{const b=e.target.closest('[data-buy]');if(b){addToCart(b.dataset.buy);closeModal();}});
 document.querySelectorAll('[data-filter]').forEach(a=>a.addEventListener('click',()=>{activeCat=a.dataset.filter;renderFilters();renderGrid();}));
 document.getElementById('newsForm').addEventListener('submit',e=>{e.preventDefault();e.target.reset();toast('¡Listo! Revisa tu correo 📩');});
-document.getElementById('menuToggle').addEventListener('click',()=>{const n=document.querySelector('.nav-links');n.style.display=getComputedStyle(n).display==='none'?'flex':'none';});
+const navLinksEl=document.querySelector('.nav-links');
+document.getElementById('menuToggle').addEventListener('click',()=>navLinksEl.classList.toggle('open'));
+navLinksEl.addEventListener('click',e=>{if(e.target.closest('a'))navLinksEl.classList.remove('open');});
 
 let toastT;function toast(msg){const t=document.getElementById('toast');document.getElementById('toastMsg').textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2400);}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeDrawer();}});
