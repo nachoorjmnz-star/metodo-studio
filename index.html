@@ -13,7 +13,14 @@
 <meta property="og:title" content="Método — Ordena tu dinero, tu tiempo y tus metas" />
 <meta property="og:description" content="Plantillas premium de finanzas y productividad en español. Descarga inmediata, para siempre." />
 <meta property="og:locale" content="es_ES" />
+<meta property="og:url" content="https://nachoorjmnz-star.github.io/metodo-studio/" />
+<meta property="og:image" content="https://nachoorjmnz-star.github.io/metodo-studio/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Método — Ordena tu dinero, tu tiempo y tus metas" />
+<meta name="twitter:description" content="Plantillas premium de finanzas y productividad en español. Descarga inmediata." />
+<meta name="twitter:image" content="https://nachoorjmnz-star.github.io/metodo-studio/og.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,7 +81,9 @@ svg{display:block}
 [data-reveal].in{opacity:1;transform:none}
 
 /* ANNOUNCE */
-.announce{background:var(--ink);color:var(--paper);text-align:center;font-size:12.5px;letter-spacing:.02em;padding:9px 16px;font-weight:500}
+.announce{display:block;background:var(--ink);color:var(--paper);text-align:center;font-size:12.5px;letter-spacing:.02em;padding:9px 16px;font-weight:500;transition:.2s}
+.announce:hover{background:#26241d}
+.announce b{color:#EBD9C7}
 .announce b{color:#EBD9C7}
 
 /* HEADER */
@@ -299,6 +308,9 @@ footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .toast svg{color:#9FD0BE}
 
+/* barra CTA fija en móvil */
+.mobile-cta{display:none}
+
 @media(max-width:940px){
   .hero-grid{grid-template-columns:1fr;gap:44px}
   .hero-visual{max-width:440px;margin:0 auto}
@@ -322,12 +334,16 @@ footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
   .section{padding:58px 0}
   .news,.bundle{padding:32px 22px}
   .spot-info{padding:30px 24px}
+  body{padding-bottom:70px}
+  .mobile-cta{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(246,241,232,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(150%);transition:transform .3s var(--ease)}
+  .mobile-cta.show{transform:none}
+  .mobile-cta .btn{flex:1;padding:12px 8px;font-size:14.5px}
 }
 </style>
 </head>
 <body>
 
-<div class="announce">✦ Oferta de lanzamiento: <b>−15%</b> en tu primer pedido con el código <b>EMPIEZA15</b></div>
+<a href="#lista" class="announce">✦ Estamos a punto de abrir · <b>apúntate a la lista</b> y llévate un <b>−15%</b> de bienvenida</a>
 
 <header>
   <div class="wrap nav">
@@ -358,7 +374,7 @@ footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
       <h1>Ordena tu <em>dinero</em>, tu tiempo y tus <em>metas</em>.</h1>
       <p class="lead">Sistemas listos para usar que convierten el caos en un plan claro. Descárgalos y empieza hoy mismo.</p>
       <div class="hero-cta">
-        <a href="#catalogo" class="btn btn-primary">Ver las plantillas</a>
+        <a href="#catalogo" class="btn btn-primary">Empieza desde 9 €</a>
         <a href="#pack" class="btn btn-ghost">Pack completo −54%</a>
       </div>
       <div class="trust">
@@ -489,18 +505,30 @@ footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- GARANTIAS -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
     <div class="section-head" data-reveal>
-      <span class="eyebrow">Lo que dicen</span>
-      <h2>Gente que por fin se aclaró</h2>
-      <p style="font-size:13px">Reseñas ilustrativas de una tienda de demostración.</p>
+      <span class="eyebrow">Sin letra pequeña</span>
+      <h2>Compra con tranquilidad</h2>
+      <p>Acabamos de abrir y queremos que tu primera compra salga redonda. Por eso te lo ponemos fácil.</p>
     </div>
-    <div class="quotes">
-      <div class="quote" data-reveal><div class="stars">★★★★★</div><p>"Llevaba años intentando cuadrar mis gastos en apps que abandonaba. Con Control Total lo veo todo de un vistazo y no lo he dejado."</p><div class="who"><div class="av">L</div><div><b>Lucía M.</b><span>Diseñadora freelance</span></div></div></div>
-      <div class="quote" data-reveal><div class="stars">★★★★★</div><p>"El pack completo me parece un regalo por lo que cuesta. El CRM de clientes solo ya vale el precio entero."</p><div class="who"><div class="av">D</div><div><b>Diego R.</b><span>Fotógrafo</span></div></div></div>
-      <div class="quote" data-reveal><div class="stars">★★★★★</div><p>"Simple, bonito y en español. Se nota que está pensado para usarlo de verdad, no para venderte un curso después."</p><div class="who"><div class="av">A</div><div><b>Ana G.</b><span>Estudiante</span></div></div></div>
+    <div class="values">
+      <div class="value" data-reveal>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Pago único</h3>
+        <p>Lo compras una vez y es tuyo para siempre. Sin suscripciones ni cargos ocultos.</p>
+      </div>
+      <div class="value" data-reveal>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/></svg></div>
+        <h3>Actualizaciones gratis</h3>
+        <p>Cuando mejoramos una plantilla, tu versión se actualiza sin ningún coste extra.</p>
+      </div>
+      <div class="value" data-reveal>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Soporte real en español</h3>
+        <p>¿Un problema con tu descarga? Te respondemos de persona a persona y lo resolvemos.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -517,7 +545,7 @@ footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
 </section>
 
 <!-- NEWSLETTER -->
-<section class="section" style="padding-top:0">
+<section class="section" id="lista" style="padding-top:0">
   <div class="wrap">
     <div class="news" data-reveal>
       <h2>Una plantilla gratis para empezar</h2>
@@ -556,7 +584,7 @@ footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
         <h4>Ayuda</h4>
         <a href="#destacado">Destacado</a>
         <a href="#faq">Preguntas frecuentes</a>
-        <a href="mailto:hola@metodo.studio">Contacto</a>
+        <a href="mailto:hola@metodostudio.com">Contacto</a>
         <a href="productos/GUIA-DE-USO.md">Guía de instalación</a>
       </div>
       <div class="foot-col">
@@ -568,7 +596,7 @@ footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
     </div>
     <div class="foot-bottom">
       <span>© 2026 Método. Todos los derechos reservados.</span>
-      <span>Hecho con cariño para gente ocupada · hola@metodo.studio</span>
+      <span>Hecho con cariño para gente ocupada · hola@metodostudio.com</span>
     </div>
   </div>
 </footer>
@@ -586,7 +614,7 @@ footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
     <div class="row" style="color:var(--green)"><span>Entrega digital</span><span>Gratis</span></div>
     <div class="total"><span>Total</span><span id="total">0 €</span></div>
     <button class="btn btn-primary btn-block" id="checkoutBtn">Finalizar compra</button>
-    <small>Pago seguro · Descarga inmediata tras el pago</small>
+    <small>Pago seguro · Descarga inmediata · Soporte en español</small>
   </div>
 </aside>
 
@@ -598,6 +626,11 @@ footer{border-top:1px solid var(--line);padding:58px 0 30px;margin-top:44px}
     <div class="modal-visual"><div class="win" id="modalVisual"></div></div>
     <div class="modal-info" id="modalInfo"></div>
   </div>
+</div>
+
+<div class="mobile-cta" id="mobileCta">
+  <a href="#catalogo" class="btn btn-ghost">Ver plantillas</a>
+  <a href="#pack" class="btn btn-primary">Pack −54 %</a>
 </div>
 
 <div class="toast" id="toast"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span id="toastMsg">Añadido a la cesta</span></div>
@@ -814,6 +847,10 @@ document.getElementById('newsForm').addEventListener('submit',e=>{e.preventDefau
 const navLinksEl=document.querySelector('.nav-links');
 document.getElementById('menuToggle').addEventListener('click',()=>navLinksEl.classList.toggle('open'));
 navLinksEl.addEventListener('click',e=>{if(e.target.closest('a'))navLinksEl.classList.remove('open');});
+
+/* barra CTA móvil: aparece al bajar del héroe */
+const mcta=document.getElementById('mobileCta');
+window.addEventListener('scroll',()=>{ mcta.classList.toggle('show', window.scrollY>640); },{passive:true});
 
 let toastT;function toast(msg){const t=document.getElementById('toast');document.getElementById('toastMsg').textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2400);}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeDrawer();}});
