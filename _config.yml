@@ -1,0 +1,7 @@
+# GitHub Pages (Jekyll): la documentación interna se queda en el repo pero no se publica en la web.
+exclude:
+  - README.md
+  - PAGOS.md
+  - DESPLIEGUE.md
+  - MARKETING.md
+  - DOMINIO.md
