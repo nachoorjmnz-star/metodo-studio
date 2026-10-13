@@ -1,49 +1,42 @@
-# Cobrar en Método
+# Cobrar en Método (Gumroad)
 
-La tienda ya está lista para vender. Solo falta conectar una pasarela que **cobre y entregue el archivo** automáticamente. Con productos digitales, lo más fácil es una plataforma que hace las dos cosas.
+## Estado actual
 
-## Recomendado: Gumroad o Lemon Squeezy
-Las dos entregan el archivo solas tras el pago y **gestionan el IVA europeo** por ti (importante vendiendo en la UE).
+Los **10 productos ya están creados en Gumroad** (cuenta *Nacho Ortega*) como **borradores**, completos: nombre, precio en **euros**, descripción de venta, portada, miniatura y archivos.
 
-| | Gumroad | Lemon Squeezy | Stripe Payment Links |
-|--|--------|----------------|----------------------|
-| Entrega el archivo sola | ✅ | ✅ | ❌ (solo cobra) |
-| Gestiona IVA UE | ✅ | ✅ | Manual |
-| Comisión aprox. | ~10 % | ~5 % + fee | ~1,5 % + 0,25 € |
-| Ideal para | Empezar rápido | Escalar | Ya tienes web propia |
+| Producto | Precio | Enlace |
+|---|---:|---|
+| Control Total | 29 € | nachoorjmnz.gumroad.com/l/control-total |
+| Libertad | 39 € | nachoorjmnz.gumroad.com/l/libertad |
+| Reto 52 Semanas | 9 € | nachoorjmnz.gumroad.com/l/reto-52-semanas |
+| Segundo Cerebro | 29 € | nachoorjmnz.gumroad.com/l/segundo-cerebro |
+| Planner 2026 | 19 € | nachoorjmnz.gumroad.com/l/planner-2026 |
+| Hábitos | 12 € | nachoorjmnz.gumroad.com/l/habitos |
+| Calendario de Contenido | 24 € | nachoorjmnz.gumroad.com/l/calendario-contenido |
+| Cliente | 34 € | nachoorjmnz.gumroad.com/l/cliente-crm |
+| Todo Método (pack) | 89 € | nachoorjmnz.gumroad.com/l/todo-metodo |
+| Mini-presupuesto (gratis) | 0 € | nachoorjmnz.gumroad.com/l/mini-presupuesto-gratis |
 
-**Sugerencia:** empieza con **Gumroad** (más simple). Si creces, pásate a Lemon Squeezy por comisión.
+La web ya tiene estos enlaces puestos en `index.html`, detrás de un interruptor: `abierto: false`.
 
-## Pasos
-1. Crea la cuenta (Gumroad / Lemon Squeezy).
-2. Sube cada producto de la carpeta `productos/` (ver cómo empaquetarlos en `productos/GUIA-DE-USO.md`).
-3. Pon el precio del catálogo (ver `README.md`).
-4. Copia el **enlace de compra** de cada producto.
-5. Pégalos en `index.html`, en el bloque `CONFIG.enlacesPago` (arriba del `<script>`):
+## Para abrir las ventas (3 pasos)
 
-```js
-const CONFIG = {
-  moneda: "€",
-  enlacesPago: {
-    "control-total":       "https://tutienda.gumroad.com/l/control-total",
-    "libertad-freelance":  "https://tutienda.gumroad.com/l/libertad",
-    "reto-52-semanas":     "https://tutienda.gumroad.com/l/reto52",
-    "segundo-cerebro":     "https://tutienda.gumroad.com/l/segundo-cerebro",
-    "planner-2026":        "https://tutienda.gumroad.com/l/planner-2026",
-    "habitos":             "https://tutienda.gumroad.com/l/habitos",
-    "calendario-contenido":"https://tutienda.gumroad.com/l/calendario",
-    "cliente-crm":         "https://tutienda.gumroad.com/l/cliente",
-    "pack-todo":           "https://tutienda.gumroad.com/l/pack"
-  }
-};
-```
+1. **Conecta el cobro (lo haces tú):** Gumroad → *Settings* → *Payments*. Elige **Spain**, marca las dos casillas (tienes DNI y puedes acreditar residencia) y añade tu **cuenta bancaria (IBAN)**. Sin esto Gumroad no deja publicar.
+2. **Publica los productos:** en *Products*, entra en cada uno y pulsa **Publish** (o dímelo y lo hago yo).
+3. **Abre la tienda:** en `index.html` cambia `abierto: false` por `abierto: true` y sube el cambio (o dímelo y lo hago yo).
 
-6. Guarda y listo: al pulsar **Finalizar compra**, la tienda abre el enlace de pago del producto.
+A partir de ahí, cada botón «Comprar →» de la cesta lleva al producto en Gumroad, y la plantilla gratis pasa por Gumroad (así recoges el email de quien la descarga).
+
+## Una decisión que es tuya: la garantía de devolución
+
+Gumroad muestra por defecto **«30-day money back guarantee»** (ajuste de tu cuenta). Tu página `reembolsos.html` habla de **14 días** y de reembolso si algo falla. Elige una opción y las dejo coherentes:
+- **A)** Garantía de 14 días (ajusta *Settings* o activa «Specify a refund policy for this product» en cada producto → 14 días).
+- **B)** Sin devoluciones salvo fallo (opción «No refunds allowed») y mantener la política actual.
 
 ## Cómo funciona el carrito
-Al ser productos digitales, cada uno se entrega por su propio enlace seguro. Si el cliente tiene varios en la cesta, la tienda abre el primero y le sugiere comprar el resto (o llevarse el **Pack completo**, que es más barato). Es el comportamiento normal en tiendas de plantillas.
 
-> Mientras no pegues los enlaces, el botón muestra un aviso explicando que la tienda está lista pero faltan las claves de pago. Nada se rompe.
+Cada plantilla se entrega por su propio enlace seguro de Gumroad. Si alguien mete varias en la cesta, cada una tiene su botón «Comprar →», y se le sugiere el **Pack** (más barato). Si el pack está en la cesta, «Finalizar compra» abre directamente el pack.
 
-## ⚠️ Lo que no puedo hacer yo
-Crear la cuenta de la pasarela y conectar tu banco es **tuyo** (requiere tus credenciales y datos fiscales). Yo dejo todo enchufado para que solo pegues los enlaces.
+## Si cambias de pasarela
+
+Los enlaces están en `CONFIG.enlacesPago` y `CONFIG.enlaceGratis` de `index.html`. Sirve cualquier pasarela con enlace de pago por producto (Lemon Squeezy, Payhip, Stripe Payment Links).
